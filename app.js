@@ -31,7 +31,7 @@ function showPane(pane) {
 
 async function loadCarreras() {
   try {
-    const r = await fetch("http://demo4485784.mockable.io/");
+    const r = await fetch("http://demo4485784.mockable.io/programacion");
     const data = await r.json();
     carrerasList = Array.isArray(data) ? data : data.carreras;
   } catch {
