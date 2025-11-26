@@ -1,5 +1,5 @@
 const STORAGE_KEY = "students_list_v1";
-const MOCK_URL = "https://demo.mockable.io/mi-endpoint-carreras";
+const MOCK_URL = "https://demo4485784.mockable.io/programacion";
 
 let students = [];
 let carrerasList = [];
@@ -12,26 +12,24 @@ function init() {
 }
 
 function showPane(pane) {
-  
-  document.querySelectorAll(".card-pane").forEach(x => 
+
+  document.querySelectorAll(".card-pane").forEach(x =>
     x.classList.add("hidden")
   );
-  
+
   document.getElementById(`pane-${pane}`).classList.remove("hidden");
-  
-  document.querySelectorAll(".nav-option").forEach(x => 
+
+  document.querySelectorAll(".nav-option").forEach(x =>
     x.classList.remove("active")
   );
   document.getElementById(`nav-${pane}`).classList.add("active");
-  
+
   if (pane === "list") renderList();
 }
 
-
-
 async function loadCarreras() {
   try {
-    const r = await fetch("http://demo4485784.mockable.io/programacion");
+    const r = await fetch(MOCK_URL);
     const data = await r.json();
     carrerasList = Array.isArray(data) ? data : data.carreras;
   } catch {
@@ -44,12 +42,12 @@ function fillCarreras() {
   const c1 = document.getElementById("select-carrera");
   const c2 = document.getElementById("edit-carrera");
 
-  c1.innerHTML = <option value="">-- Seleccione opción --</option>;
-  c2.innerHTML = <option value="">-- Seleccione opción --</option>;
+  c1.innerHTML = `<option value="">-- Seleccione opción --</option>`;
+  c2.innerHTML = `<option value="">-- Seleccione opción --</option>`;
 
   carrerasList.forEach(c => {
-    c1.innerHTML += <option value="${c}">${c}</option>;
-    c2.innerHTML += <option value="${c}">${c}</option>;
+    c1.innerHTML += `<option value="${c}">${c}</option>`;
+    c2.innerHTML += `<option value="${c}">${c}</option>`;
   });
 }
 
@@ -152,4 +150,4 @@ function applyEdit() {
 
 function closeEditModal() {
   editModal.hide();
-} 
+}
