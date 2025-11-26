@@ -1,0 +1,40 @@
+body {
+  background: #fff;
+  padding: 20px;
+}
+
+header {
+  background: #ffe9c6;
+  border: 1px solid #f0c88a;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.nav-option {
+  cursor: pointer;
+}
+
+.card-pane {
+  min-height: 300px;
+  border: 1px dotted #777;
+  padding: 18px;
+  border-radius: 6px;
+}
+
+.purple-btn {
+  background: #7b00ff;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+}
+
+.purple-btn:hover {
+  opacity: 0.9;
+}
+
+.hidden {
+  display: none;
+} 
